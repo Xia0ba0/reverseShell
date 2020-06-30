@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 # author: yulibao
 # this script will bind a local shell to a remote listening
 
