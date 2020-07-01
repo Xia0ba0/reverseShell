@@ -1,7 +1,9 @@
 #!/bin/bash
-# author: yulibao
-# this script is a static version of revers.sh, for some specital treatement in exploitation
+# Author: yulibao
+# Date: 2020-7-1
+# Script: A static version of revers.sh, for some specital treatement in exploitation
 
+# Usage:
 # remote listening may be like this: 
 #   nc -lvvp 4444
 
