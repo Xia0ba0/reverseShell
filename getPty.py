@@ -4,4 +4,4 @@
 # Script: create a pty environment
 
 import pty
-pty.spawn("/bin/sh")
+pty.spawn("/bin/bash")

